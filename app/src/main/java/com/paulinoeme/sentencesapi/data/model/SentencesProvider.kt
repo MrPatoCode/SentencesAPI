@@ -1,7 +1,9 @@
 package com.paulinoeme.sentencesapi.data.model
 
-class SentencesProvider {
-    companion object{
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class SentencesProvider @Inject  constructor() {
         var sentences: List<SentenceModel> = emptyList()
-    }
 }

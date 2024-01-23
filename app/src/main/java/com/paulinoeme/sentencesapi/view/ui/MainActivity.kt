@@ -3,14 +3,13 @@ package com.paulinoeme.sentencesapi.view.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.paulinoeme.sentencesapi.R
 import com.paulinoeme.sentencesapi.databinding.ActivityMainBinding
 import com.paulinoeme.sentencesapi.viewmodel.SentencesViewModel
-import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val sentenceModel:SentencesViewModel by viewModels()

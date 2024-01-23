@@ -7,13 +7,17 @@ import androidx.lifecycle.viewModelScope
 import com.paulinoeme.sentencesapi.data.model.SentenceModel
 import com.paulinoeme.sentencesapi.domain.GetSentenceRandomUserCase
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SentencesViewModel:ViewModel() {
+@HiltViewModel
+class SentencesViewModel @Inject constructor(
+    private val getSentence: GetSentenceRandomUserCase
+) : ViewModel() {
     val sentenceModel = MutableLiveData<SentenceModel>()
-    val getSentence = GetSentenceRandomUserCase()
 
-    fun getSentenceRandom(){
+    fun getSentenceRandom() {
         viewModelScope.launch {
             val sentence = getSentence()
             sentence?.let {
@@ -22,7 +26,7 @@ class SentencesViewModel:ViewModel() {
         }
     }
 
-    fun intoImage(url:String, image: ImageView){
+    fun intoImage(url: String, image: ImageView) {
         Picasso
             .get()
             .load(url)
