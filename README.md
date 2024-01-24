@@ -1,5 +1,7 @@
 Prueba técnica (consumo de API) - App sobre frases de grandes pensadores
 
+•	Dagger Hilt
+
 •	POO
 
 • MVVM
